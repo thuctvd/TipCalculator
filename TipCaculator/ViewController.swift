@@ -15,7 +15,6 @@ class ViewController: UIViewController {
   @IBOutlet weak var totalLabel: UILabel!
   @IBOutlet weak var tipControl: UISegmentedControl!
   let tipRates = [0.15, 0.2, 0.25]
-  var currentRate = 0.15
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -75,8 +74,6 @@ class ViewController: UIViewController {
   }
   
   @IBAction func onTap(_ sender: AnyObject) {
-    //self.view.endEditing(true)
-    //print(String(format: "Location: %s", NSLocale.)
   }
 
   @IBAction func onSelectTipRate(_ sender: AnyObject) {
@@ -87,8 +84,6 @@ class ViewController: UIViewController {
     let bill = Double(billTextField.text!) ?? 0
     let tip = bill * tipRates[tipControl.selectedSegmentIndex]
     let total = bill + tip
-    print(Globals.getCurrency())
-    print(Globals.formatNumber(val: tip))
     
     tipLabel.text = "\(Globals.getCurrency())\(Globals.formatNumber(val: tip))"
     totalLabel.text = "\(Globals.getCurrency())\((Globals.formatNumber(val: total)))"
